@@ -1,8 +1,9 @@
 {
   "name": "env-shield",
-  "displayName": "Environment Secrets Blur",
+  "displayName": "Env Shield",
   "description": "Blur secret values in .env files and other configurable files",
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "publisher": "csuriel",
   "engines": {
     "vscode": "^1.80.0"
   },

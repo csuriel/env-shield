@@ -1,5 +1,7 @@
 # Env Shield
 
+![Extension in Action](./docs/images/cover.png)
+
 A Visual Studio Code extension that automatically blurs secret values in `.env` files and other configurable files to prevent accidental exposure of sensitive information.
 
 ## Features
@@ -54,7 +56,7 @@ You can configure additional files to be processed through VS Code settings:
 - Click the "Secrets Blurred" status bar item to toggle blur effect
 - Use the command "Toggle Sensitive Values Blur" from the command palette
 
-![Extension in VS Code Marketplace (TK)](docs/images/extension-marketplace.png)
+![Extension in VS Code Marketplace](docs/images/env-shield-marketplace.png)
 
 ## Extension in action
 
@@ -90,8 +92,13 @@ Sensitive information in the configured sensitive files will be blurred as well:
 
 The status bar indicator shows the blur status and allows you to toggle the blur effect:
 
-- Blurred Status: ![Status Bar Indicator Blurred](./docs/images/secret-blurred-status-bar.png)
-- Visible Status: ![Status Bar Indicator Visible](./docs/images/secret-visible-status-bar.png)
+- Blurred Status:
+
+![Status Bar Indicator Blurred](./docs/images/secret-blurred-status-bar.png)
+
+- Visible Status:
+
+![Status Bar Indicator Visible](./docs/images/secret-visible-status-bar.png)
 
 ```json
 // settings.json
@@ -110,12 +117,6 @@ Configured aditional `.json` files:
 
 Configured sensitive files:
 ![Extension in Action](./docs/images/extension-in-action-sensitive-files.png)
-
-### Status bar indicator
-
-![Status Bar Indicator Blurred](./docs/images/secret-blurred-status-bar.png)
-
-![Status Bar Indicator Visible](./docs/images/secret-visible-status-bar.png)
 
 ## Tips and Tricks
 
