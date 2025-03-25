@@ -1,0 +1,43 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+.vscodeignore
+.git/**
+.github/**
+
+# Source files
+src/**
+test/**
+**/*.map
+tsconfig.json
+webpack.config.js
+.eslintrc.json
+.prettierrc
+.prettierignore
+
+# Development files
+node_modules/**
+out/test/**
+images/*.psd
+.nyc_output/**
+coverage/**
+
+# Build process files
+.travis.yml
+.azure-pipelines.yml
+.gitlab-ci.yml
+.jenkins.yml
+
+# Documentation and examples
+docs/**
+examples/**
+*.md
+!README.md
+!CHANGELOG.md
+!LICENSE.md
+
+# Misc
+.DS_Store
+**/*.vsix
+npm-debug.log
+yarn-error.log

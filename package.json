@@ -1,0 +1,52 @@
+{
+  "name": "env-shield",
+  "displayName": "Environment Secrets Blur",
+  "description": "Blur secret values in .env files and other configurable files",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "icon": "./out/images/icon.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "env-shield.toggleBlur",
+        "title": "Toggle Sensitive Values Blur"
+      }
+    ],
+    "configuration": {
+      "title": "Environment Secrets Blur",
+      "properties": {
+        "env-shield.additionalFiles": {
+          "type": "array",
+          "default": [],
+          "description": "Additional JSON files to apply blur effect (provide file paths)"
+        },
+        "env-shield.sensitiveFiles": {
+          "type": "array",
+          "default": [],
+          "description": "Files to check for sensitive key patterns (provide file paths)"
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csuriel/env-shield.git"
+  },
+  "scripts": {
+    "vscode:prepublish": "mkdir -p out && cp -r src/* out/",
+    "package": "mkdir -p out && cp -r src/* out/",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
