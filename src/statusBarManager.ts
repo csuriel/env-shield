@@ -1,6 +1,8 @@
-const vscode = require("vscode");
+import * as vscode from "vscode";
 
-class StatusBarManager {
+export class StatusBarManager {
+  private statusBarItem: vscode.StatusBarItem;
+
   constructor() {
     this.statusBarItem = vscode.window.createStatusBarItem(
       vscode.StatusBarAlignment.Right,
@@ -9,12 +11,12 @@ class StatusBarManager {
     this.statusBarItem.command = "env-secrets-blur.toggleBlur";
   }
 
-  initialize() {
+  public initialize(): void {
     this.updateStatus(true);
     this.statusBarItem.show();
   }
 
-  updateStatus(isBlurred) {
+  public updateStatus(isBlurred: boolean): void {
     this.statusBarItem.text = isBlurred
       ? "$(eye-closed) Secrets Blurred"
       : "$(eye) Secrets Visible";
@@ -23,9 +25,7 @@ class StatusBarManager {
       : "Click to blur secret values";
   }
 
-  dispose() {
+  public dispose(): void {
     this.statusBarItem.dispose();
   }
 }
-
-module.exports = { StatusBarManager };

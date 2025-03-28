@@ -2,7 +2,7 @@
   "name": "env-shield",
   "displayName": "Env Shield",
   "description": "Blur secret values in .env files and other configurable files",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "publisher": "csuriel",
   "engines": {
     "vscode": "^1.80.0"
@@ -14,7 +14,7 @@
     "onStartupFinished"
   ],
   "main": "./out/extension.js",
-  "icon": "./out/images/icon.png",
+  "icon": "src/images/icon.png",
   "contributes": {
     "commands": [
       {
@@ -43,11 +43,27 @@
     "url": "https://github.com/csuriel/env-shield.git"
   },
   "scripts": {
-    "vscode:prepublish": "mkdir -p out && cp -r src/* out/",
-    "package": "mkdir -p out && cp -r src/* out/",
-    "test": "node ./out/test/runTest.js"
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./ && mkdir -p out/images && cp -r src/images/* out/images/",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "reinstall": "./scripts/reinstall-env-shield.sh"
   },
   "devDependencies": {
-    "mocha": "^10.2.0"
+    "@eslint/js": "^9.23.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.24",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.1",
+    "globals": "^16.0.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.28.0",
+    "vsce": "^2.15.0"
   }
 }
