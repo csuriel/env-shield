@@ -1,28 +1,28 @@
 .vscode/**
 .vscode-test/**
+src/**
+!src/images/**
 .gitignore
+.yarnrc
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/.eslintrc.json
+**/*.map
+**/*.ts
+node_modules/**
 .vscodeignore
 .git/**
 .github/**
 
 # Source files
-src/**
 test/**
-**/*.map
-tsconfig.json
-webpack.config.js
-.eslintrc.json
-.prettierrc
-.prettierignore
-
-# Development files
-node_modules/**
-out/test/**
-images/*.psd
+**/*.psd
 .nyc_output/**
 coverage/**
 
-# Build process files
+# Development files
+out/test/**
+images/*.psd
 .travis.yml
 .azure-pipelines.yml
 .gitlab-ci.yml
@@ -41,3 +41,5 @@ examples/**
 **/*.vsix
 npm-debug.log
 yarn-error.log
+
+scripts/**
