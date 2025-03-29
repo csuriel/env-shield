@@ -2,7 +2,7 @@
   "name": "env-shield",
   "displayName": "Env Shield",
   "description": "Blur secret values in .env files and other configurable files - 100% local processing, no server communication, open source",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "publisher": "csuriel",
   "engines": {
     "vscode": "^1.80.0"
