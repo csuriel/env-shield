@@ -4,20 +4,18 @@
 echo "Uninstalling Env Shield extension..."
 code --uninstall-extension csuriel.env-shield
 
-# 2. Clear VS Code settings for env-shield
-SETTINGS_PATH="$HOME/Library/Application Support/Code/User/settings.json"
-if [ -f "$SETTINGS_PATH" ]; then
-    echo "Clearing Env Shield settings..."
-    # Create a temporary file
-    TMP_FILE=$(mktemp)
-    # Remove env-shield.* settings using jq
-    jq 'with_entries(select(.key | startswith("env-shield.") | not))' "$SETTINGS_PATH" > "$TMP_FILE"
-    mv "$TMP_FILE" "$SETTINGS_PATH"
-fi
 
 # 3. Install the extension
 echo "Installing Env Shield extension..."
-code --install-extension env-shield-1.0.3.vsix --force
+version=$(jq -r '.version' /Users/csuriel/projects/vscode-blur/package.json)
+vsix_file="env-shield-${version}.vsix"
+
+if [[ -f "$vsix_file" ]]; then
+    code --install-extension "$vsix_file" --force
+else
+    echo "VSIX file not found. Please run 'npm run package' to generate the VSIX file."
+    exit 1
+fi
 
 #  restart extensions
 echo "Restart extensions to apply changes..."
