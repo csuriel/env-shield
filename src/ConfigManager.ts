@@ -4,14 +4,15 @@ import { DEFAULT_BLUR_STRENGTH } from "./constants";
 
 export class ConfigManager {
   private config: EnvShieldConfig;
-  private readonly onConfigChanged: vscode.EventEmitter<EnvShieldConfig> = new vscode.EventEmitter<EnvShieldConfig>();
+  private readonly onConfigChanged: vscode.EventEmitter<EnvShieldConfig> =
+    new vscode.EventEmitter<EnvShieldConfig>();
   public readonly onDidChangeConfiguration = this.onConfigChanged.event;
 
   constructor() {
     this.config = this.loadConfiguration();
     // Listen for configuration changes
-    vscode.workspace.onDidChangeConfiguration(e => {
-      if (e.affectsConfiguration('env-shield')) {
+    vscode.workspace.onDidChangeConfiguration((e) => {
+      if (e.affectsConfiguration("env-shield")) {
         this.config = this.loadConfiguration();
         this.onConfigChanged.fire(this.config);
       }
