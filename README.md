@@ -1,5 +1,7 @@
 # Env Shield
 
+> **Security & Privacy**: This extension processes everything locally on your machine - no server communication, no data collection. The code is open source and available on [GitHub](https://github.com/csuriel/env-shield.git). See [SECURITY.md](./SECURITY.md) for details.
+
 ![Extension in Action](./docs/images/cover.png)
 
 A Visual Studio Code extension that automatically blurs secret values in `.env` files and other configurable files to prevent accidental exposure of sensitive information.
@@ -9,7 +11,10 @@ A Visual Studio Code extension that automatically blurs secret values in `.env` 
 - Automatically detects and blurs sensitive information in .env files and other configured files
 - Smart pattern recognition for common secret patterns
 - Easy toggle functionality
-- Customizable file patterns
+- Customizable file patterns and sensitive content detection
+- Configurable blur strength for better visibility control
+- JSON file support with intelligent value detection
+- Custom pattern support for specialized use cases
 - Real-time updates as you edit files
 - Minimal performance impact
   ![Extension in Action](./docs/images/extension-in-action-env.png)
@@ -49,6 +54,8 @@ You can configure additional files to be processed through VS Code settings:
 
 - `additionalFiles`: Array of additional JSON files to monitor
 - `sensitiveFiles`: Array of files to check for sensitive patterns
+- `blurStrength`: Customize the blur strength of sensitive content (default: 5px)
+- `customPatterns`: Array of custom patterns to identify sensitive content
 
 ## Usage
 
