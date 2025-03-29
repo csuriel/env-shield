@@ -2,7 +2,7 @@
   "name": "env-shield",
   "displayName": "Env Shield",
   "description": "Blur secret values in .env files and other configurable files - 100% local processing, no server communication, open source",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "publisher": "csuriel",
   "engines": {
     "vscode": "^1.80.0"
@@ -90,5 +90,8 @@
     "typescript": "^5.3.3",
     "typescript-eslint": "^8.28.0",
     "vsce": "^2.15.0"
+  },
+  "overrides": {
+    "xml2js": "^0.5.0"
   }
 }
