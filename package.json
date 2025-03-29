@@ -25,15 +25,40 @@
     "configuration": {
       "title": "Environment Secrets Blur",
       "properties": {
+        "env-shield.blurStrength": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 20,
+          "description": "The strength of the blur effect applied to sensitive values (1-20)",
+          "scope": "window"
+        },
         "env-shield.additionalFiles": {
           "type": "array",
+          "items": {
+            "type": "string"
+          },
           "default": [],
-          "description": "Additional JSON files to apply blur effect (provide file paths)"
+          "description": "Additional JSON files to apply blur effect (provide file paths)",
+          "scope": "resource"
         },
         "env-shield.sensitiveFiles": {
           "type": "array",
+          "items": {
+            "type": "string"
+          },
           "default": [],
-          "description": "Files to check for sensitive key patterns (provide file paths)"
+          "description": "Files to check for sensitive key patterns (provide file paths)",
+          "scope": "resource"
+        },
+        "env-shield.customPatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Custom regular expressions to identify sensitive values",
+          "scope": "resource"
         }
       }
     }
