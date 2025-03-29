@@ -36,6 +36,9 @@ export class SecretBlurManager {
           ...newConfig.customPatterns,
           ...SENSITIVE_PATTERNS,
         ]);
+        // Recreate decoration type with new blur strength
+        this.decorationType.dispose();
+        this.decorationType = this.createDecorationType();
         // Update decorations in all visible editors
         vscode.window.visibleTextEditors.forEach((editor) => {
           this.updateDecorations(editor);
@@ -91,8 +94,10 @@ export class SecretBlurManager {
   }
 
   private createDecorationType(): vscode.TextEditorDecorationType {
+    const blurStrength =
+      this.configManager.getConfig().blurStrength ?? DEFAULT_BLUR_STRENGTH;
     return vscode.window.createTextEditorDecorationType({
-      textDecoration: `none; filter: blur(${DEFAULT_BLUR_STRENGTH}px);`,
+      textDecoration: `none; filter: blur(${blurStrength}px);`,
     });
   }
 
