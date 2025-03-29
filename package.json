@@ -23,7 +23,7 @@
       }
     ],
     "configuration": {
-      "title": "Environment Secrets Blur",
+      "title": "Env Shield Configuration",
       "properties": {
         "env-shield.blurStrength": {
           "type": "number",
