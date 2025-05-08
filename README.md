@@ -151,4 +151,11 @@ Configured sensitive files:
 
 ## Support
 
+If you find this extension helpful, consider buying me a coffee to support its development!
+
+[Buy me a coffee](https://buymeacoffee.com/surielcrhim)
+
+<img src="https://github.com/user-attachments/assets/f7fc5340-fb41-44c9-906e-b8498d5561eb" width="200" height="200" />
+
+
 File issues at [GitHub Issues](https://github.com/csuriel/env-shield/issues)
